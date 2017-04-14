@@ -1,10 +1,10 @@
-#!/usr/bin/python
 # Physics 91SI
 # Spring 2015
 # Lab 01
 # Part 1
 # Solution
 
+<<<<<<< HEAD
 import sys
 
 def main():
@@ -33,6 +33,8 @@ Usage
     else:
         print("Error: input not understood.\n" \
                 "    Type './fib.py help' for info on this program.")
+=======
+>>>>>>> parent of 7194f2a... Working version of fib.py
 def fib(n):
     """Return nth element of the Fibonacci sequence."""
     # Create the base case
@@ -46,17 +48,12 @@ def fib(n):
         n1 = n_new
     return n0
 
-phi_approx_output_format = \
-"""Approximation order: {:d}
-    fib_n: {:g}
-    fib_(n-1): {:g}
-    phi: {:.25f}"""
-
-def phi_approx(n, show_output=True):
+def phi_approx(n):
     """Return the nth-order Fibonacci approximation to the golden ratio."""
     fib_n = fibbb(n)
     fib_nm1 = fib(n - 1)
     phi = float(fib_n)/fib_nm1
+<<<<<<< HEAD
     if show_output:
         print(phi_approx_output_format.format(n, fib_n, fib_nm1, phi))
     return phi
@@ -80,3 +77,11 @@ def phi_converge():
         print(phi_converge_output_format.format(i, phi_new, phi_old))
     print("\nConverged to %.25f" % phi_new)
 if __name__ == '__main__': main()
+=======
+    print n, fib_n, fib_nm1, phi
+    return phi
+
+# Find successively better approximations
+for i in range(2, 15):
+    print phi_approx(i)
+>>>>>>> parent of 7194f2a... Working version of fib.py
